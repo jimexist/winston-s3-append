@@ -1,0 +1,54 @@
+{
+  "name": "winston-s3-append",
+  "description": "S3 append API based transport for Winston",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "packageManager": "yarn@4.5.2",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimexist/winston-s3-append.git"
+  },
+  "keywords": [
+    "winston",
+    "s3",
+    "transport",
+    "append"
+  ],
+  "author": {
+    "name": "Jiayu Liu",
+    "url": "https://github.com/jimexist"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jimexist/winston-s3-append/issues"
+  },
+  "homepage": "https://github.com/jimexist/winston-s3-append#readme",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf ./lib/",
+    "test": "vitest",
+    "format": "biome format --write ./src ./test *.ts *.json",
+    "lint": "biome lint ./src ./test",
+    "check": "biome check ./src ./test",
+    "bench": "vitest bench",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4",
+    "winston": "^3.17.0"
+  },
+  "peerDependencies": {
+    "prom-client": "*",
+    "winston": "*"
+  },
+  "dependencies": {
+    "uuid": "^11.0.5",
+    "winston-transport": "^4.9.0"
+  }
+}

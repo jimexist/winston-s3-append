@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'yarn'
+
+    - name: Install dependencies
+      run: yarn install --immutable --immutable-cache --check-cache
+
+    - name: Type check
+      run: yarn typecheck
+
+    - name: Check dependencies
+      run: yarn check
+
+    - name: Lint
+      run: yarn lint
+
+    - name: Run tests
+      run: yarn test run
+
+    - name: Build
+      run: yarn build
