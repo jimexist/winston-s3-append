@@ -17,22 +17,22 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '22'
-        cache: 'yarn'
+        cache: 'npm'
 
     - name: Install dependencies
-      run: yarn install --immutable --immutable-cache --check-cache
+      run: npm ci
 
     - name: Type check
-      run: yarn typecheck
+      run: npm run typecheck
 
     - name: Check dependencies
-      run: yarn check
+      run: npm run check
 
     - name: Lint
-      run: yarn lint
+      run: npm run lint
 
     - name: Run tests
-      run: yarn test run
+      run: npm run test run
 
     - name: Build
-      run: yarn build
+      run: npm run build

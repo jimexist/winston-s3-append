@@ -3,21 +3,13 @@
   "description": "S3 append API based transport for Winston",
   "version": "0.1.0",
   "main": "./lib/index.js",
-  "packageManager": "yarn@4.5.2",
   "types": "./lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
+  "files": ["lib/**/*"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jimexist/winston-s3-append.git"
   },
-  "keywords": [
-    "winston",
-    "s3",
-    "transport",
-    "append"
-  ],
+  "keywords": ["winston", "s3", "transport", "append"],
   "author": {
     "name": "Jiayu Liu",
     "url": "https://github.com/jimexist"
